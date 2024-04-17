@@ -40,7 +40,7 @@ cvmfs_force_unmount: false
 # write to the cache directory, whatever storage is backing it.
 # WARNING: if false, you should ensure that cvmfs_cache_size quota is appropriate for the storage,
 # or else the client may fill up the filesystem (which could cause other applications to fail, and potentially freeze the OS).
-cvmfs_client_configure_storage: true
+cvmfs_client_configure_storage: false
 
 # If this block device name is defined, then a volume group, logical volume, and filesystem will be created on it.
 # If it is not defined, then a volume group is assumed to already exist and will be used instead.
@@ -48,10 +48,10 @@ cvmfs_client_configure_storage: true
 #cvmfs_client_pv_name: "vdb"
 
 # Name of the volume group for the CVMFS local cache filesystem.
-cvmfs_client_vg_name: "cvmfsvg"
+#cvmfs_client_vg_name: "cvmfsvg"
 
 # Name of the logical volume for the CVMFS local cache filesystem.
-cvmfs_client_lv_name: "cvmfs"
+#cvmfs_client_lv_name: "cvmfs"
 
 ### Settings for CVMFS client
 # For further details on CVMFS client configuration settings refer to:
@@ -60,7 +60,7 @@ cvmfs_client_lv_name: "cvmfs"
 
 # Size of the local cache filesystem in megabytes. The cache usage quota (CVMFS_QUOTA_LIMIT) will be automatically
 # set to ~ 85% of this amount, to allow for momentary usage beyond the quota while cache clean-up is in progress.
-cvmfs_cache_size: "50000"
+cvmfs_cache_size: "4000"
 
 # The list of repositories that you are interested in, e.g. for monitoring purposes.
 # Note that if CVMFS_STRICT_MOUNT is enabled this will be an exclusive list, preventing other repositories from being mounted. 
