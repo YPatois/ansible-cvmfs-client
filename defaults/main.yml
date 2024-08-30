@@ -65,7 +65,7 @@ cvmfs_cache_size: "4000"
 # The list of repositories that you are interested in, e.g. for monitoring purposes.
 # Note that if CVMFS_STRICT_MOUNT is enabled this will be an exclusive list, preventing other repositories from being mounted. 
 cvmfs_repositories:
-  - "soft.computecanada.ca"
+  - "cms.cern.ch"
 
 # The list of caching proxy servers to use.
 # For more info see
