@@ -14,8 +14,6 @@
 - { import_tasks: config.yml, tags: ['cvmfs', 'config'] }
 - { import_tasks: test.yml, tags: ['cvmfs', 'test'] }
 
-
-
 - name: Package cvmfs
   package:
     name: cvmfs
