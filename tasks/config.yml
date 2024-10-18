@@ -9,6 +9,16 @@
     mode: "0644"
   notify: "config reload"
 
+- name: Set up <repository>.local configuration file
+  template:
+    src: "repository.local.j2"
+    dest: "/etc/cvmfs/config.d/{{ item.repository }}.local"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  loop: "{{ cvmfs_repositories_data }}"
+  notify: "config reload"
+
 - name: Set autofs timeout
   ansible.builtin.lineinfile:
     path: /etc/autofs.conf
