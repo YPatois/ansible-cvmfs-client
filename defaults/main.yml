@@ -80,3 +80,6 @@ cvmfs_http_proxy: "DIRECT"
 # cvmfs_client_conf:
 #   CVMFS_INSTRUMENT_FUSE: "true"
 cvmfs_client_conf: {}
+
+# This dict allows CVMFS repositories to be configured in /etc/cvmfs/config.d/<repository>.local
+cvmfs_repositories_data: []
