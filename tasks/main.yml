@@ -12,7 +12,12 @@
 - { import_tasks: storage.yml, tags: ['cvmfs', 'storage'], when: cvmfs_client_configure_storage | bool }
 - { import_tasks: packages.yml, tags: ['cvmfs', 'packages'] }
 - { import_tasks: config.yml, tags: ['cvmfs', 'config'] }
-- { import_tasks: test.yml, tags: ['cvmfs', 'test'] }
+
+- name: CVMFS tests
+  include_tasks:
+    file: tasks/test.yml
+  tags: ['cvmfs', 'test']
+  when: "cvmfs_tests is defined"
 
 - name: Package cvmfs
   package:
